@@ -1,13 +1,14 @@
-// Julianna Vera
+// Christian Alton bonilla
 // CPSC 120-01
-// 14-11-2022
-// annavera38@csu.fullerton.edu
-// @annavera38
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
 //
 // Lab 10-01
-// Partners: @alton7759
+// Partners: @annavera38
 //
 // Calculate the area of a triangle defined by length and width.
+//
 #include <iostream>
 int RectangleArea(int length, int width) {
   int area{-1};

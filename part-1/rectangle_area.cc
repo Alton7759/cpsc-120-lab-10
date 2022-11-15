@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Christian Alton bonilla
+// CPSC 120-01
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
+//
+// Lab 10-01
+// Partners: @annavera38
+//
+// Calculate the area of a triangle defined by length and width.
+//
 
 #include <iostream>
 #include <string>
@@ -8,8 +18,8 @@
 
 int main(int argc, char const* argv[]) {
   std::vector<std::string> arguments(argv, argv + argc);
-  std::vector<std::string> numbers("-", "1", "2", "3", "4", "5", "6"."7", "8",
-                                   "9");
+  std::vector<std::string> numbers{"-", "1", "2", "3", "4", "5",
+                                   "6", "7", "8", "9", "0"};
   if (arguments.size() == 3) {
     arguments.erase(arguments.begin());
   } else {
@@ -18,32 +28,31 @@ int main(int argc, char const* argv[]) {
     return 1;
   }
   bool isnum = false;
-  for (auto& check : numbers) {
+  for (const std::string& check : numbers) {
     isnum = false;
-    if (arguments.at(0).at(0) = numbers) {
+    std::string word{arguments.at(0).at(0)};
+    if (word == check) {
       isnum = true;
       break;
     }
   }
-  for (auto& check2 : numbers) {
-    isnum = false;
-    if (arguments.at(0).at(0)) {
-      isnum = true;
+  bool isnum2 = false;
+  for (const std::string& check2 : numbers) {
+    isnum2 = false;
+    std::string word2{arguments.at(1).at(0)};
+    if (word2 == check2) {
+      isnum2 = true;
       break;
     }
   }
-  int length{std::stoi(arguments.at(0))};
-  int width{std::stoi(arguments.at(1))};
-  std::cout << RectangleArea(length, width);
-  // TODO: convert the command line arguments to a std::vector of std::strings.
-  // TODO: Check to make sure you have enough arguments. If you have too few,
-  // print an error message and exit.
-  // TODO: Convert the command line arguments from std::strings to integers
-  // using std::stoi()
-  // TODO: Calculate the area of the given rectangle using the function
-  // RectangleAndgle that you defined and implemented in
-  // rectangle_area_functions.cc.
-  // TODO: Print the input length, input_width, and the area to the terminal.
-  // TODO: Return zero if everything worked correctly.
+  if (isnum && isnum2) {
+    int length{std::stoi(arguments.at(0))};
+    int width{std::stoi(arguments.at(1))};
+    std::cout << RectangleArea(length, width);
+  } else {
+    std::cout << "There was a problem reading the input numbers.";
+    return 1;
+  }
+
   return 0;
 }
