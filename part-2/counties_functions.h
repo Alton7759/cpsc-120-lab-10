@@ -4,7 +4,7 @@
 // Alton77@csu.fullerton.edu
 // @alton7759
 //
-// Lab 10-01
+// Lab 10-02
 // Partners: @annavera38
 //
 // make sure things conncet
