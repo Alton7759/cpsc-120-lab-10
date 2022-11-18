@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Christian Alton bonilla
+// CPSC 120-01
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
+//
+// Lab 10-01
+// Partners: @annavera38
+//
+// finds a countie and tells how many people
+//
 
 #include <iostream>
 #include <string>
@@ -7,12 +17,6 @@
 #include "counties_functions.h"
 
 int main(int argc, char const *argv[]) {
-  // A 2D vector which represents all the counties in California
-  // and the population of the counties. For example, Butte County
-  // is at location 3. So the name is ca_counties[0][3] and
-  // Butte County's population is ca_counties[1][3].
-  // The population is stored as a string because we cannot mix
-  // types in the 2D vector.
   std::vector<std::vector<std::string>> ca_counties{
       {{"Alameda",   "Alpine",        "Amador",       "Butte",
         "Calaveras", "Colusa",        "Contra Costa", "Del Norte",
@@ -39,16 +43,22 @@ int main(int argc, char const *argv[]) {
         "1885508", "267792", "182139",  "3283",    "44118",  "451716",
         "485887",  "552999", "99063",   "65498",   "16060",  "477054",
         "55810",   "839784", "216986",  "83421"}}};
-  // TODO: convert the command line arguments to a std::vector of std::strings.
-  // TODO: Check to make sure you have enough arguments. If you have too few,
-  // print an error message, use AllCountiesString() to show all the counties,
-  // and exit.
-  // TODO: Use CountyIndex() to find the location of the county we are searching
-  // for.
-  // TODO: Check to see if the index returned is not -1. If it is not -1, print
-  // a message with the name of the county and the county's population. Else,
-  // print an error message saying the provided argument could not be found in
-  // the vector. Print a list of all the counties in California using
-  // AllCountiesString() and return 1.
+  std::vector<std::string> arguments(argv, argv + argc);
+  if (arguments.size() < 2) {
+    std::cout << "Please specify a county name on the command line. Exiting.\n";
+    return 1;
+  }
+  std::string countie{arguments.at(1)};
+  if (CountyIndex(ca_counties, countie) == -1) {
+    std::cout << "Error: " << countie
+              << " is not in the vector. Please check your spelling.\n"
+              << "The counties in California are: "
+              << AllCountiesString(ca_counties) << "\n";
+    return 1;
+  }
+  std::cout << "The population of "
+            << ca_counties.at(0).at(CountyIndex(ca_counties, countie))
+            << " County is "
+            << ca_counties.at(1).at(CountyIndex(ca_counties, countie)) << ".";
   return 0;
 }

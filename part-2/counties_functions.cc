@@ -1,22 +1,41 @@
-// TODO: Insert your own header
+// Christian Alton bonilla
+// CPSC 120-01
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
+//
+// Lab 10-01
+// Partners: @annavera38
+//
+// some functons
+//
 
 #include "counties_functions.h"
 
 std::string AllCountiesString(
     const std::vector<std::vector<std::string>>& ca_counties) {
   std::string all_counties_string;
-  // TODO: Implement the function
-  // Write a loop which takes the name of each county from the vector
-  // ca_counties and adds it to all_counties_string along with a space.
+  int loc{0};
+  std::string space{" "};
+  for (const std::string& add : ca_counties.at(0)) {
+    all_counties_string.insert(loc, add);
+    loc += add.size();
+    all_counties_string.insert(loc, space);
+    loc += space.size();
+  }
   return all_counties_string;
 }
 
 int CountyIndex(const std::vector<std::vector<std::string>>& ca_counties,
                 const std::string& match_county) {
   int index{-1};
-  // TODO: Implement the function
-  // Write a loop which goes through the ca_counties vector looking
-  // for a match with the string match_county. When it finds a match,
-  // return the index of the match. If it is not found, return -1.
-  return index;
+  int locofmatch{-1};
+  for (const std::string& checker : ca_counties.at(0)) {
+    index++;
+    if (checker == match_county) {
+      locofmatch = index;
+      break;
+    }
+  }
+  return locofmatch;
 }

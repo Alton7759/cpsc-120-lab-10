@@ -1,4 +1,14 @@
-// TODO: Insert your own header
+// Christian Alton bonilla
+// CPSC 120-01
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
+//
+// Lab 10-01
+// Partners: @annavera38
+//
+// make sure things conncet
+//
 
 /* Do not edit below this line. */
 /* Do not edit below this line. */
