@@ -4,7 +4,7 @@
 // Alton77@csu.fullerton.edu
 // @alton7759
 //
-// Lab 010-03
+// Lab 10-03
 // Partners: @annavera38
 //
 // makes gradient

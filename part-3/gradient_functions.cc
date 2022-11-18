@@ -4,7 +4,7 @@
 // Alton77@csu.fullerton.edu
 // @alton7759
 //
-// Lab 09-01
+// Lab 10-03
 // Partners: @annavera38
 //
 // checks if the extensions are the same

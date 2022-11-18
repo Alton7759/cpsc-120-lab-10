@@ -1,4 +1,14 @@
-
+// Christian Alton bonilla
+// CPSC 120-01
+// 2022-11-14
+// Alton77@csu.fullerton.edu
+// @alton7759
+//
+// Lab 10-02
+// Partners: @annavera38
+//
+// units
+//
 /* Do not edit below this line. */
 /* Do not edit below this line. */
 /* Do not edit below this line. */
@@ -54,21 +64,28 @@
   }
 namespace {
 
-
-
-// Tests bool HasMatchingFileExtension(const std::string& file_name, const std::string& extension);
+// Tests bool HasMatchingFileExtension(const std::string& file_name, const
+// std::string& extension);
 TEST(HasMatchingFileExtension, Exists) {
-  EXPECT_DURATION_LE(5, EXPECT_EQ(true, HasMatchingFileExtension("image.jpg", ".jpg")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(true, HasMatchingFileExtension("image.png", ".png")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(true, HasMatchingFileExtension("image.JPEG", ".JPEG")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(true, HasMatchingFileExtension("image.GIF", ".GIF")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(true, HasMatchingFileExtension("image.jpg", ".jpg")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(true, HasMatchingFileExtension("image.png", ".png")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(true, HasMatchingFileExtension("image.JPEG", ".JPEG")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(true, HasMatchingFileExtension("image.GIF", ".GIF")));
 }
 
 TEST(HasMatchingFileExtension, NotExist) {
-  EXPECT_DURATION_LE(5, EXPECT_EQ(false, HasMatchingFileExtension("image.jpg", ".foo")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(false, HasMatchingFileExtension("image.png", ".foo")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(false, HasMatchingFileExtension(".fo", ".foo")));
-  EXPECT_DURATION_LE(5, EXPECT_EQ(false, HasMatchingFileExtension("image.FOO", ".foo")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(false, HasMatchingFileExtension("image.jpg", ".foo")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(false, HasMatchingFileExtension("image.png", ".foo")));
+  EXPECT_DURATION_LE(5,
+                     EXPECT_EQ(false, HasMatchingFileExtension(".fo", ".foo")));
+  EXPECT_DURATION_LE(
+      5, EXPECT_EQ(false, HasMatchingFileExtension("image.FOO", ".foo")));
 }
 
 }  // namespace
